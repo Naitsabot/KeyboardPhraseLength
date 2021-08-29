@@ -3,13 +3,12 @@ Script to calculate length of travel between letters on a keyboard in a given ph
 
 Works with all letters, spaces and singular symbols. (Accents are not counted.)
 
-Status:
+Status:  
 only has a keymap of DK-keyboard
 
-
-The Calculation happens in the function phrase_key_travel from phrase_key_travel.py
-Data for the keyboards kan be found in keymaps.py
-main.py can be called for easy one-off calls
+The Calculation happens in the function phrase_key_travel from phrase_key_travel.py  
+Data for the keyboards kan be found in keymaps.py  
+main.py can be called for easy one-off calls  
 
 ____________________________________________________________
 
