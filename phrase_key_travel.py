@@ -1,13 +1,13 @@
 import unicodedata
+from math import sqrt
 from keymaps import *
 
 def phrase_key_travel(phrase: str, dict_map: dict = DK_keymap(), db_vec: bool = False) -> int:
      """Centimeter travel between keys of  phrase/word on keyboard (dict_map) """
      
      phrase = str(unicodedata.normalize('NFKD', phrase.lower()).encode('ASCII', 'ignore'))
-     from math import sqrt
+     
      length = 0
-
      for i in range(len(phrase)):
         if i == 0 : continue 
 
