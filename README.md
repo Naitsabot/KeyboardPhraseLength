@@ -1,3 +1,5 @@
+
+
 # KeyboardPhraseLength
 Script to calculate length of travel between letters on a keyboard in a given phrase/word
 
@@ -9,10 +11,8 @@ only has a keymap of DK-keyboard
 The Calculation happens in the function phrase_key_travel from ```phrase_key_travel.py```  
 Data for the keyboards kan be found in ```keymaps.py```  
 ```main.py``` can be called for easy one-off calls  
-
-____________________________________________________________
-
-Terminal use:  
+---
+## Terminal use  
 ```python.exe [print?-bool] "[phrase/word)" [keymap] [print?-debud-vectors-bool]```
 
 Examples:  
@@ -21,3 +21,5 @@ Examples:
 ```pyrhon.exe main.py False "T| êst"```
 
 (excuse any weird spelling og phrasing)
+---
+Inspired by and made during a Matt Parker video
