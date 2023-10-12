@@ -2,37 +2,18 @@ import sys
 from keymaps import *
 from phrase_key_travel import *
 
-def main():
-    n = len(sys.argv)
-
-    # arg 0: print
-    if n > 2:
-        printbol = eval(sys.argv[1])
-        continuation = False
-
-    # arg 1: phrase
-    if n > 3:
-        arg1 = str(sys.argv[2])
-        continuation = True
-    
-    # arg 2: map
-    if n > 4:
-        arg2 = eval(sys.argv[3]+"()")
-    else:
-        arg2 = DK_keymap()
-    
-    # arg 3: debug
-    if n == 5:
-        arg3 = eval(sys.argv[4])
-    else: 
-        arg3 = False
-    
+def main(prase, bprint, bdebug, keymap):  
     # call
-    if continuation == True:
-        if printbol == False:
-            phrase_key_travel(phrase=arg1, dict_map=arg2, db_vec=arg3)
-        else:
-            print(phrase_key_travel(phrase=arg1, dict_map=arg2, db_vec=arg3),"cm")
+    if bprint == False:
+        phrase_key_travel(phrase=arg1, dict_map=arg2, db_vec=arg3)
+    else:
+        print(phrase_key_travel(phrase=arg1, dict_map=arg2, db_vec=arg3),"cm")
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description='oh yeah...')
+    parser.add_argument("phrase", help="working phrase")
+    parser.add_argument("keymap", required=0, default="DK_keymap()", help="used keymap")
+    parser.add_argument("print", required=0, default=0, help="print output")
+    parser.add_argument("debug", required=0, default=0, help="debug print")
+    args, unknown = parser.parse_known_args()
+    main(args.phrase, bool(args.print), bool(args.debug), args.keymap)
